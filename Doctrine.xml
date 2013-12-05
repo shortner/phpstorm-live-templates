@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateSet group="Doctrine">
+  <template name="d:ent" value="use \Doctrine\ORM\Mapping as ORM;&#10;&#10;/**&#10; * @ORM\Entity(repositoryClass=&quot;$repo$&quot;)&#10; * @ORM\Table(name=&quot;$table$&quot;)&#10; */&#10;class $class$ extends $baseclass$ {&#10;    /**&#10;     * @ORM\Id&#10;     * @ORM\Column(type=&quot;integer&quot;)&#10;     * @ORM\GeneratedValue&#10;     */&#10;    protected $$id = null;&#10; &#10;    $END$&#10;}" description="Doctrtine Entity" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="" defaultValue="&quot;Model_&quot;" alwaysStopAt="true" />
+    <variable name="repo" expression="" defaultValue="&quot;Repository_&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="baseclass" expression="" defaultValue="&quot;Model_Base&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:array" value="/**&#10; * @ORM\Column(type=&quot;array&quot;, name=&quot;$name$&quot;, nullable=$nullable$)&#10; */&#10;protected $$$name$ = $val$;&#10;&#10;$END$" description="Doctrine Array Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="nullable" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="&quot;array()&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:bool" value="/**&#10; * @ORM\Column(type=&quot;boolean&quot;, name=&quot;$name$&quot;, nullable=$nullable$)&#10; */&#10;protected $$$name$ = $val$;&#10;&#10;$END$" description="Doctrine Boolean Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="nullable" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:date" value="/**&#10; * @ORM\Column(type=&quot;date&quot;, name=&quot;$name$&quot;, nullable=$nullable$)&#10; */&#10;protected $$$name$ = $val$;&#10;&#10;$END$" description="Doctrine Date Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="nullable" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:datetime" value="/**&#10; * @ORM\Column(type=&quot;datetime&quot;, name=&quot;$name$&quot;, nullable=$nullable$)&#10; */&#10;protected $$$name$ = $val$;&#10;&#10;$END$" description="Doctrine DateTime Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="nullable" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:dec" value="/**&#10; * @ORM\Column(type=&quot;datetime&quot;, name=&quot;$name$&quot;, nullable=$nullable$, scale=$scale$, precision=$precision$)&#10; */&#10;protected $$$name$ = $val$;&#10;&#10;$END$" description="Doctrine Decimal Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="nullable" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="scale" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true" />
+    <variable name="precision" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:int" value="/**&#10; * @ORM\Column(type=&quot;integer&quot;, name=&quot;$name$&quot;, nullable=$nullable$, unique=$unique$)&#10; */&#10;protected $$$name$ = $val$;&#10;&#10;$END$" description="Doctrine Integer Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="nullable" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="unique" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:string" value="/**&#10; * @ORM\Column(type=&quot;string&quot;, name=&quot;$name$&quot;, length=$length$, nullable=$nullable$, unique=$unique$)&#10; */&#10;protected $$$name$ = $val$;&#10;&#10;$END$" description="Doctrine String Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="length" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="nullable" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="unique" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:text" value="/**&#10; * @ORM\Column(type=&quot;test&quot;, name=&quot;$name$&quot;)&#10; */&#10;protected $$$name$ = '$val$';&#10;&#10;$END$" description="Doctrine Text Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:time" value="/**&#10; * @ORM\Column(type=&quot;time&quot;, name=&quot;$name$&quot;, nullable=$nullable$)&#10; */&#10;protected $$$name$ = $val$;&#10;&#10;$END$" description="Doctrine Time Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;property&quot;" alwaysStopAt="true" />
+    <variable name="nullable" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:primary" value="/**&#10; * @ORM\Id&#10; * @ORM\Column(type=&quot;integer&quot;, name=&quot;$name$&quot;)&#10; * @ORM\GeneratedValue&#10; */&#10;protected $$$name$ = null;&#10;&#10;$END$" description="Doctrine Primary Property" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:oto" value="/**&#10; * @ORM\OneToOne(targetEntity=&quot;$entity$&quot;, cascade={&quot;$cascade$&quot;}, fetch=&quot;$fetch$&quot;, orphanRemoval=$orpahn$, inversedBy=&quot;$inverse$&quot;)&#10; */&#10;$protected = $$$property$;&#10;&#10;$END$" description="Doctrine Association OneToOne" toReformat="false" toShortenFQNames="true">
+    <variable name="entity" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="cascade" expression="enum(&quot;all&quot;,&quot;persist&quot;,&quot;remove&quot;,&quot;merge&quot;)" defaultValue="all" alwaysStopAt="true" />
+    <variable name="fetch" expression="enum(&quot;LAZY&quot;,&quot;EXTRA_LAZY&quot;,&quot;EAGER&quot;" defaultValue="EAGER" alwaysStopAt="true" />
+    <variable name="orpahn" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="inverse" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="property" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:join" value="$END$@ORM\JoinColumn(name=&quot;$column$&quot;, referencedColumnName=&quot;$reference$&quot;)" description="Doctrine JoinColumn" toReformat="false" toShortenFQNames="true">
+    <variable name="column" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="reference" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:mto" value="/**&#10; * @ORM\ManyToOne(targetEntity=&quot;$entity$&quot;, cascade={&quot;$cascade$&quot;}, fetch=&quot;$fetch$&quot;)&#10; */&#10;$protected = $$$property$;&#10;&#10;$END$" description="Doctrine Association ManyToOne" toReformat="false" toShortenFQNames="true">
+    <variable name="entity" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="cascade" expression="enum(&quot;all&quot;,&quot;persist&quot;,&quot;remove&quot;,&quot;merge&quot;)" defaultValue="all" alwaysStopAt="true" />
+    <variable name="fetch" expression="enum(&quot;LAZY&quot;,&quot;EXTRA_LAZY&quot;,&quot;EAGER&quot;" defaultValue="EAGER" alwaysStopAt="true" />
+    <variable name="property" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:mtmi" value="/**&#10; * @ORM\ManyToMany(targetEntity=&quot;$entity$&quot;, mappedBy=&quot;$field$&quot;)&#10; */&#10;$protected = $$$property$;&#10;&#10;$END$" description="Doctrine Association ManyToMany Inversing" toReformat="false" toShortenFQNames="true">
+    <variable name="entity" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="property" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:mtm" value="/**&#10; * @ORM\ManyToMany(targetEntity=&quot;$entity$&quot;, inversedBy=&quot;$field$&quot;)&#10; */&#10;$protected = $$$property$;&#10;&#10;$END$" description="Doctrine Association ManyToMany" toReformat="false" toShortenFQNames="true">
+    <variable name="entity" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="property" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="d:inherit" value="@ORM\InheritanceType(&quot;$inheritance$&quot;)&#10;* @ORM\DiscriminatorColumn(name=&quot;discr&quot;, type=&quot;string&quot;)&#10;* @ORM\DiscriminatorMap({&quot;key&quot; = &quot;Entity&quot;})" description="Doctrine Inheritance" toReformat="false" toShortenFQNames="true">
+    <variable name="inheritance" expression="enum(&quot;SINGLE_TABLE&quot;,&quot;JOINED&quot;)" defaultValue="SINGLE_TABLE" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>
+
